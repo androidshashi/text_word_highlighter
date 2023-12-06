@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:text_word_highlighter/text_word_highlighter.dart';
+import 'package:text_word_highlighter/utils/word_highlight.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,26 +44,27 @@ class _MyHomePageState extends State<MyHomePage> {
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
           child: TextWordHighlighter(
-        text: 'How are you? I am fine. I love fine.',
-        highlighterList: [
-          Highlighter(
-              index: 2,
-              style: const TextStyle(
+        text: 'He Flutter Developers. This is a word highlighter package.',
+        textStyle: const TextStyle(color: Colors.teal),
+        wordHighlightList: [
+          WordHighlight(
+              wordIndex: 2,
+              wordStyle: const TextStyle(
                 color: Colors.red,
               )),
-          Highlighter(
-              index: 5,
-              style: const TextStyle(
+          WordHighlight(
+              wordIndex: 5,
+              wordStyle: const TextStyle(
                 color: Colors.green,
               )),
-          Highlighter(
-              index: 6,
-              style: const TextStyle(
+          WordHighlight(
+              wordIndex: 6,
+              wordStyle: const TextStyle(
                 color: Colors.blue,
               )),
-          Highlighter(
-              index: 8,
-              style: const TextStyle(
+          WordHighlight(
+              wordIndex: 8,
+              wordStyle: const TextStyle(
                 color: Colors.orange,
               )),
         ],

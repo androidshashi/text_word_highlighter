@@ -1,7 +1,7 @@
 name: text_word_highlighter
 description: A flutter package that highlight multiple words inside a text sentence.
-version: 0.0.1
-homepage:
+version: 0.0.3
+homepage: https://github.com/androidshashi/text_word_highlighter
 
 environment:
   sdk: '>=3.0.6 <4.0.0'

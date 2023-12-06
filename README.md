@@ -10,30 +10,53 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## text_word_highlighter
+text_word_highlighter provides a widget TextWordHighlighter a widget helps you highlight(using text style property) one or many word inside a sentence. 
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+1. Highlight multiple words inside a sentence.
+2. Provide style for particular word
+3. Highlight words based on index
+4. Highlight words based on word(Will be added)
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Get the example `/example` folder.
 
 ```dart
-const like = 'sample';
+TextWordHighlighter(
+    text: 'He Flutter Developers. This is a word highlighter package.',
+    textStyle: const TextStyle(color: Colors.teal),
+    wordHighlightList: [
+        WordHighlight(
+            wordIndex: 2,
+            wordStyle: const TextStyle(
+            color: Colors.red, )),
+        WordHighlight(
+            wordIndex: 5,
+            wordStyle: const TextStyle(
+            color: Colors.green, )),
+        WordHighlight(
+            wordIndex: 6,
+            wordStyle: const TextStyle(
+            color: Colors.blue, )),
+        WordHighlight(
+            wordIndex: 8,
+            wordStyle: const TextStyle(
+            color: Colors.orange, )),
+  ],
+)
 ```
 
-## Additional information
+###Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Attributes  | Desscription                                                                                                                
+------------- |-----------------------------------------------------------------------------------------------------------------------------
+| TextWordHighlighter  | A widget that takes a sentence(basically a string) and a list of indexes and highlights them.                               | 
+| text  | A simple sentence in the form of string.                                                                                    | 
+| textStyle  | TextStyle property of text for all the words inside text(sentence).                                                         | 
+| highlighterList  | List of WordHighlight(A WordHighlight takes index of the word to be highlighted in the sentence, and the style for the word.). | 
+
+### Coming soon
+More features coming soon...
