@@ -13,6 +13,8 @@ and the Flutter guide for
 ## text_word_highlighter
 text_word_highlighter provides a widget TextWordHighlighter a widget helps you highlight(using text style property) one or many word inside a sentence. 
 
+![image](https://github.com/androidshashi/text_word_highlighter/assets/91884965/8e06b128-5c93-4ee9-9fa7-6e4861e590b9)
+
 ## Features
 
 1. Highlight multiple words inside a sentence.
@@ -60,3 +62,4 @@ Attributes  | Desscription
 
 ### Coming soon
 More features coming soon...
+
