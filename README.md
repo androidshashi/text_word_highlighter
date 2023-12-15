@@ -32,7 +32,7 @@ TextWordHighlighter(
     textStyle: const TextStyle(color: Colors.teal),
     wordHighlightList: [
         WordHighlight(
-            wordIndex: 2,
+            wordIndex: 2,// index of the word that will be highlighted
             wordStyle: const TextStyle(
             color: Colors.red, )),
         WordHighlight(
@@ -51,7 +51,7 @@ TextWordHighlighter(
 )
 ```
 
-###Additional information
+### Additional information
 
 Attributes  | Desscription                                                                                                                
 ------------- |-----------------------------------------------------------------------------------------------------------------------------
