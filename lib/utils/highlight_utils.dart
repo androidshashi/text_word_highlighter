@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:text_word_highlighter/utils/word_highlight.dart';
 
 /// Type by which the word is getting highlighted
@@ -16,6 +17,7 @@ enum HighlightType {
 }
 
 // Get the highlight word based on the the highlight type
+@protected
 bool isHighlightedWord(List<String> wordList,
     {required int index, required WordHighlight wordHighlight}) {
   switch (wordHighlight.highlightType) {

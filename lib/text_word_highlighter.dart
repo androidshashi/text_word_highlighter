@@ -37,7 +37,6 @@ class TextWordHighlighter extends StatelessWidget {
   final TextAlign textAlign = TextAlign.start;
   final TextDirection? textDirection;
   final bool softWrap = true;
-  final double textScaleFactor = 1.0;
   final TextScaler textScaler = TextScaler.noScaling;
   final int? maxLines;
   final Locale? locale;
@@ -50,7 +49,6 @@ class TextWordHighlighter extends StatelessWidget {
       textAlign: textAlign,
       textDirection: textDirection,
       softWrap: softWrap,
-      textScaleFactor: textScaleFactor,
       textScaler: textScaler,
       maxLines: maxLines,
       locale: locale,
@@ -75,7 +73,6 @@ class TextWordHighlighter extends StatelessWidget {
               index: i, wordHighlight: wordHighlight))
           .toList();
 
-      // Check if any highlighter exists for the given index
       spanList.add(TextSpan(
           text: _wordList[i],
           style: highlighters.isNotEmpty
