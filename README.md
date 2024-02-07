@@ -20,46 +20,123 @@ text_word_highlighter provides a widget TextWordHighlighter a widget helps you h
 1. Highlight multiple words inside a sentence.
 2. Provide style for particular word
 3. Highlight words based on index
-4. Highlight words based on word(Will be added)
+4. Highlight words based on word
 
 ## Usage
 
 Get the example `/example` folder.
 
+### Highlight by index
 ```dart
-TextWordHighlighter(
-    text: 'He Flutter Developers. This is a word highlighter package.',
-    textStyle: const TextStyle(color: Colors.teal),
-    wordHighlightList: [
-        WordHighlight(
-            wordIndex: 2,// index of the word that will be highlighted
-            wordStyle: const TextStyle(
-            color: Colors.red, )),
-        WordHighlight(
-            wordIndex: 5,
-            wordStyle: const TextStyle(
-            color: Colors.green, )),
-        WordHighlight(
-            wordIndex: 6,
-            wordStyle: const TextStyle(
-            color: Colors.blue, )),
-        WordHighlight(
-            wordIndex: 8,
-            wordStyle: const TextStyle(
-            color: Colors.orange, )),
-  ],
-)
+          // To highlight by index
+          // Use WordHighlight.byIndex constructor
+          TextWordHighlighter(
+            text: "Hey Flutter Developers. This is a word highlighter package.",
+            textStyle: const TextStyle(color: Colors.teal),
+            wordHighlightList: [
+              WordHighlight.byIndex(
+                 wordIndex: 2,
+                 wordStyle: const TextStyle(
+                 color: Colors.red)
+              ),
+            WordHighlight.byIndex(
+                wordIndex: 5,
+                wordStyle: const TextStyle(
+                color: Colors.green,
+            )),
+            WordHighlight.byIndex(
+                wordIndex: 6,
+                wordStyle: const TextStyle(
+                color: Colors.blue,
+            )),
+            WordHighlight.byIndex(
+                wordIndex: 8,
+                wordStyle: const TextStyle(
+                color: Colors.orange,
+            )),
+],
+),
 ```
 
-### Additional information
+### Highlight by word
 
-Attributes  | Desscription                                                                                                                
-------------- |-----------------------------------------------------------------------------------------------------------------------------
-| TextWordHighlighter  | A widget that takes a sentence(basically a string) and a list of indexes and highlights them.                               | 
-| text  | A simple sentence in the form of string.                                                                                    | 
-| textStyle  | TextStyle property of text for all the words inside text(sentence).                                                         | 
-| highlighterList  | List of WordHighlight(A WordHighlight takes index of the word to be highlighted in the sentence, and the style for the word.). | 
+```dart
+          // Highlight by word
+          // Use WordHighlight.byWord constructor
+          TextWordHighlighter(
+            text: "Hey Flutter Developers. This is a word highlighter package.",
+            textStyle: const TextStyle(color: Colors.teal),
+            wordHighlightList: [
+              WordHighlight.byWord(
+                  word: "Flutter",
+                  wordStyle: const TextStyle(
+                    color: Colors.red,
+                  )),
+              WordHighlight.byWord(
+                  word: "THIS",
+                  ignoreCase: true,
+                  wordStyle: const TextStyle(
+                    color: Colors.green,
+                  )),
+              WordHighlight.byWord(
+                  word: "WORD",
+                  ignoreCase: false,
+                  wordStyle: const TextStyle(
+                    color: Colors.green,
+                  )),
+              
+            ],
+          ),
+```
 
-### Coming soon
-More features coming soon...
+### TextWordHighlighter attributes
+
+Attributes  | Desscription                                                            
+------------- |-------------------------------------------------------------------------
+| TextWordHighlighter  | A widget that takes a sentence(basically a string) and highlights them. | 
+| text  | A simple sentence in the form of string.                                | 
+| textStyle  | TextStyle property of text for all the words inside text(sentence).     | 
+| highlighterList  | List of WordHighlight(Please see WordHighlight attributes below ).      | 
+
+
+#### WordHighlight Class
+
+Currently There are two ways  you can highlight the word.
+
+##### byIndex 
+
+To highlight the word by index you have to provide two arguments in WordHighlight.byIndex constructor as shown below.
+
+wordIndex : Index of the word
+wordStyle : Style of the word
+
+```dart
+            WordHighlight.byIndex(
+                wordIndex: 8, // Index of the word 
+                wordStyle: const TextStyle(
+                color: Colors.orange,
+            )),
+```
+
+##### byWord
+
+To highlight the word by index you have to provide two arguments in WordHighlight.byIndex constructor as shown below.
+
+wordIndex : Index of the word
+wordStyle : Style of the word
+ignoreCase : [optional] true or false (To match the word case sensitive or insensitive) ,
+
+```dart
+            WordHighlight.byIndex(
+                wordIndex: 8, // Index of the word 
+                wordStyle: const TextStyle(
+                color: Colors.orange)
+                ignoreCase : true
+            ),
+```
+
+### More features coming soon...
+1. Highlight by character
+2. Highlight by range
+
 

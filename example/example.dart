@@ -33,6 +33,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final title = 'Hey Flutter Developers. This is a word highlighter package.';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,30 +44,63 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
-          child: TextWordHighlighter(
-        text: 'He Flutter Developers. This is a word highlighter package.',
-        textStyle: const TextStyle(color: Colors.teal),
-        wordHighlightList: [
-          WordHighlight(
-              wordIndex: 2,
-              wordStyle: const TextStyle(
-                color: Colors.red,
-              )),
-          WordHighlight(
-              wordIndex: 5,
-              wordStyle: const TextStyle(
-                color: Colors.green,
-              )),
-          WordHighlight(
-              wordIndex: 6,
-              wordStyle: const TextStyle(
-                color: Colors.blue,
-              )),
-          WordHighlight(
-              wordIndex: 8,
-              wordStyle: const TextStyle(
-                color: Colors.orange,
-              )),
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          //When you have index of the word in the line to be highlighted
+          // Use WordHighlight.byIndex constructor
+          TextWordHighlighter(
+            text: title,
+            textStyle: const TextStyle(color: Colors.teal),
+            wordHighlightList: [
+              WordHighlight.byIndex(
+                  wordIndex: 2,
+                  wordStyle: const TextStyle(
+                    color: Colors.red,
+                  )),
+              WordHighlight.byIndex(
+                  wordIndex: 5,
+                  wordStyle: const TextStyle(
+                    color: Colors.green,
+                  )),
+              WordHighlight.byIndex(
+                  wordIndex: 6,
+                  wordStyle: const TextStyle(
+                    color: Colors.blue,
+                  )),
+              WordHighlight.byIndex(
+                  wordIndex: 8,
+                  wordStyle: const TextStyle(
+                    color: Colors.orange,
+                  )),
+            ],
+          ),
+
+          // Highlight by word
+          // Use WordHighlight.byWord constructor
+          TextWordHighlighter(
+            text: title,
+            textStyle: const TextStyle(color: Colors.teal),
+            wordHighlightList: [
+              WordHighlight.byWord(
+                  word: "Flutter",
+                  wordStyle: const TextStyle(
+                    color: Colors.red,
+                  )),
+              WordHighlight.byWord(
+                  word: "THIS",
+                  ignoreCase: true,
+                  wordStyle: const TextStyle(
+                    color: Colors.green,
+                  )),
+              WordHighlight.byWord(
+                  word: "WORD",
+                  ignoreCase: false,
+                  wordStyle: const TextStyle(
+                    color: Colors.green,
+                  )),
+            ],
+          ),
         ],
       )), // This trailing comma makes auto-formatting nicer for build methods.
     );
